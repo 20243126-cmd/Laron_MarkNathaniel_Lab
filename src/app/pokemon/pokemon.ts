@@ -1,6 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { TitleCasePipe } from '@angular/common';
-import { PokemonService, Pokemon } from '../services/pokemon.service';
+import {
+  PokemonService,
+  Pokemon as PokemonData
+} from '../services/pokemon.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -9,14 +12,16 @@ import { PokemonService, Pokemon } from '../services/pokemon.service';
   templateUrl: './pokemon.html',
   styleUrl: './pokemon.css'
 })
-export class PokemonComponent {
+export class Pokemon {
 
   private pokemonService = inject(PokemonService);
 
-  selectedRegion = 'kanto';
+  selectedRegion = 'Kanto';
 
-  get pokemon(): Pokemon[] {
-    return this.pokemonService.getPokemonByRegion(this.selectedRegion);
+  get pokemon(): PokemonData[] {
+    return this.pokemonService.getPokemonByRegion(
+      this.selectedRegion
+    );
   }
 
   selectRegion(region: string): void {

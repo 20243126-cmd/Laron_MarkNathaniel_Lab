@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+.hoenn {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(135deg, #859194, #a0eca9, #f8f8f6);
+}
+
+.hoenn h1 {
+  text-align: center;
+  color: #087f8c;
+  font-size: 42px;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px white;
+}
+
+.leader {
+  max-width: 900px;
+  margin: 25px auto;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 20px;
+  border-left: 7px solid #087f8c;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.leader h2 {
+  color: #087f8c;
+  font-size: 28px;
+  margin-top: 0;
+}
+
+.leader h3 {
+  color: #168aad;
+  margin-top: 20px;
+}
+
+.leader p {
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+
+  .hoenn {
+    padding: 20px;
+  }
+
+  .hoenn h1 {
+    font-size: 32px;
+  }
+
+  .leader {
+    padding: 20px;
+  }
+
+}

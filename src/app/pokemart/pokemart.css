@@ -1,34 +1,135 @@
-.shop {
-  padding: 30px;
+.pokemart {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(135deg, #fff176, #ffcc80, #ff8a80);
 }
 
-.shop-layout {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 30px;
+.pokemart h1 {
+  text-align: center;
+  color: #d84315;
+  font-size: 42px;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px white;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 35px;
+  color: #5d4037;
+}
+
+.shop {
+  max-width: 1100px;
+  margin: auto;
 }
 
 .items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: 25px;
 }
 
-.item-card,
-.cart {
-  padding: 20px;
-  border: 1px solid #ccc;
+.item-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  border: 4px solid #ff7043;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+}
+
+.item-card h2 {
+  color: #e65100;
+  margin-bottom: 10px;
+}
+
+.item-card p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.price {
+  color: #2e7d32;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.item-card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
   border-radius: 10px;
+  background: #ef5350;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.item-card button,
-.cart button {
-  padding: 8px 15px;
-  cursor: pointer;
+.item-card button:hover {
+  background: #c62828;
+}
+
+/* CART */
+.cart {
+  max-width: 900px;
+  margin: 45px auto 0;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  border-left: 8px solid #fbc02d;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cart h2 {
+  color: #f57f17;
+  text-align: center;
 }
 
 .cart-item {
   display: flex;
   justify-content: space-between;
-  margin: 10px 0;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.total {
+  text-align: right;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2e7d32;
+  margin-top: 20px;
+}
+
+@media (max-width: 800px) {
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pokemart {
+    padding: 20px;
+  }
+
+  .pokemart h1 {
+    font-size: 32px;
+  }
+
+  .items {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 }

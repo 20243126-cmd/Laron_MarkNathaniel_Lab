@@ -1,12 +1,12 @@
 .region {
   min-height: 100vh;
   padding: 40px;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffeaa7);
+  background: linear-gradient(135deg, #8be9fd, #74d680, #f9f871);
 }
 
 .region h1 {
   text-align: center;
-  color: #d62828;
+  color: #087f8c;
   font-size: 42px;
   margin-bottom: 40px;
   text-shadow: 2px 2px white;
@@ -18,12 +18,12 @@
   padding: 25px;
   background: rgba(255, 255, 255, 0.92);
   border-radius: 20px;
-  border-left: 7px solid #d62828;
+  border-left: 7px solid #087f8c;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .leader h2 {
-  color: #e85d04;
+  color: #087f8c;
   font-size: 28px;
   margin-top: 0;
 }
@@ -39,6 +39,7 @@
 }
 
 @media (max-width: 600px) {
+
   .region {
     padding: 20px;
   }
@@ -50,4 +51,5 @@
   .leader {
     padding: 20px;
   }
+
 }

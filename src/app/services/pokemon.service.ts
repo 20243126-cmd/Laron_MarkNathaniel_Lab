@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 export interface Pokemon {
   name: string;
   type: string;
   heldItem: string;
   description: string;
+  region: string;
 }
 
 @Injectable({
@@ -12,126 +13,103 @@ export interface Pokemon {
 })
 export class PokemonService {
 
-  private pokemonData: Record<string, Pokemon[]> = {
-    kanto: [
-      {
-        name: 'Pikachu',
-        type: 'Electric',
-        heldItem: 'Light Ball',
-        description: 'A popular Electric-type Pokémon known for its powerful Thunderbolt.'
-      },
-      {
-        name: 'Charizard',
-        type: 'Fire/Flying',
-        heldItem: 'Charcoal',
-        description: 'A powerful dragon-like Pokémon that can breathe intense flames.'
-      },
-      {
-        name: 'Blastoise',
-        type: 'Water',
-        heldItem: 'Mystic Water',
-        description: 'A Water-type Pokémon that uses powerful water cannons on its shell.'
-      },
-      {
-        name: 'Venusaur',
-        type: 'Grass/Poison',
-        heldItem: 'Miracle Seed',
-        description: 'A Grass-type Pokémon with a large flower growing on its back.'
-      },
-      {
-        name: 'Gengar',
-        type: 'Ghost/Poison',
-        heldItem: 'Spell Tag',
-        description: 'A mysterious Ghost-type Pokémon that enjoys hiding in shadows.'
-      },
-      {
-        name: 'Dragonite',
-        type: 'Dragon/Flying',
-        heldItem: 'Dragon Fang',
-        description: 'A friendly but powerful Dragon-type Pokémon capable of flying at high speeds.'
-      }
-    ],
+  private pokemonList = signal<Pokemon[]>([
+    
+    // =========================
+    // KANTO
+    // =========================
+    {
+      name: 'Pikachu',
+      type: 'Electric',
+      heldItem: 'Light Ball',
+      description: 'A friendly Electric-type Pokémon that stores electricity in its cheeks.',
+      region: 'Kanto'
+    },
+    {
+      name: 'Charizard',
+      type: 'Fire/Flying',
+      heldItem: 'Charcoal',
+      description: 'A powerful Fire-type Pokémon that can fly and breathe intense flames.',
+      region: 'Kanto'
+    },
 
-    johto: [
-      {
-        name: 'Typhlosion',
-        type: 'Fire',
-        heldItem: 'Charcoal',
-        description: 'A powerful Fire-type Pokémon that creates explosions of flames.'
-      },
-      {
-        name: 'Feraligatr',
-        type: 'Water',
-        heldItem: 'Mystic Water',
-        description: 'A large Water-type Pokémon with powerful jaws and strong physical attacks.'
-      },
-      {
-        name: 'Meganium',
-        type: 'Grass',
-        heldItem: 'Miracle Seed',
-        description: 'A gentle Grass-type Pokémon that releases a pleasant aroma from its flower.'
-      },
-      {
-        name: 'Ampharos',
-        type: 'Electric',
-        heldItem: 'Magnet',
-        description: 'An Electric-type Pokémon whose tail can produce a bright light.'
-      },
-      {
-        name: 'Scizor',
-        type: 'Bug/Steel',
-        heldItem: 'Metal Coat',
-        description: 'A fast Bug and Steel-type Pokémon with powerful claw-like pincers.'
-      },
-      {
-        name: 'Tyranitar',
-        type: 'Rock/Dark',
-        heldItem: 'Hard Stone',
-        description: 'A powerful Rock-type Pokémon known for its incredible strength and durability.'
-      }
-    ],
+    // =========================
+    // JOHTO
+    // =========================
+    {
+      name: 'Typhlosion',
+      type: 'Fire',
+      heldItem: 'Charcoal',
+      description: 'A powerful Fire-type Pokémon that can create explosive flames.',
+      region: 'Johto'
+    },
+    {
+      name: 'Espeon',
+      type: 'Psychic',
+      heldItem: 'Twisted Spoon',
+      description: 'A Psychic-type Pokémon with powerful mental abilities.',
+      region: 'Johto'
+    },
 
-    hoenn: [
-      {
-        name: 'Sceptile',
-        type: 'Grass',
-        heldItem: 'Miracle Seed',
-        description: 'A fast Grass-type Pokémon with sharp leaves on its tail.'
-      },
-      {
-        name: 'Blaziken',
-        type: 'Fire/Fighting',
-        heldItem: 'Charcoal',
-        description: 'A powerful Fire and Fighting-type Pokémon known for its strong kicks.'
-      },
-      {
-        name: 'Swampert',
-        type: 'Water/Ground',
-        heldItem: 'Mystic Water',
-        description: 'A powerful Water and Ground-type Pokémon capable of moving through muddy terrain.'
-      },
-      {
-        name: 'Gardevoir',
-        type: 'Psychic/Fairy',
-        heldItem: 'Twisted Spoon',
-        description: 'A Psychic-type Pokémon that can use powerful psychic abilities to protect its trainer.'
-      },
-      {
-        name: 'Metagross',
-        type: 'Steel/Psychic',
-        heldItem: 'Metal Coat',
-        description: 'A powerful Steel and Psychic-type Pokémon with incredible intelligence.'
-      },
-      {
-        name: 'Salamence',
-        type: 'Dragon/Flying',
-        heldItem: 'Dragon Fang',
-        description: 'A powerful Dragon-type Pokémon that can fly freely through the sky.'
-      }
-    ]
-  };
+    // =========================
+    // HOENN
+    // =========================
+    {
+      name: 'Treecko',
+      type: 'Grass',
+      heldItem: 'Miracle Seed',
+      description: 'A Grass-type Pokémon known for its speed and ability to climb walls.',
+      region: 'Hoenn'
+    },
+    {
+      name: 'Torchic',
+      type: 'Fire',
+      heldItem: 'Charcoal',
+      description: 'A Fire-type Pokémon with a flame-burning sac inside its body.',
+      region: 'Hoenn'
+    },
+    {
+      name: 'Mudkip',
+      type: 'Water',
+      heldItem: 'Mystic Water',
+      description: 'A Water-type Pokémon that can sense movement through its head fin.',
+      region: 'Hoenn'
+    },
+    {
+      name: 'Gardevoir',
+      type: 'Psychic/Fairy',
+      heldItem: 'Twisted Spoon',
+      description: 'A powerful Pokémon that uses psychic abilities to protect its trainer.',
+      region: 'Hoenn'
+    },
+    {
+      name: 'Flygon',
+      type: 'Ground/Dragon',
+      heldItem: 'Soft Sand',
+      description: 'A Dragon-type Pokémon known as the elemental spirit of the desert.',
+      region: 'Hoenn'
+    },
+    {
+      name: 'Rayquaza',
+      type: 'Dragon/Flying',
+      heldItem: 'Dragon Fang',
+      description: 'A Legendary Pokémon that lives high above the clouds.',
+      region: 'Hoenn'
+    }
+
+  ]);
 
   getPokemonByRegion(region: string): Pokemon[] {
-    return this.pokemonData[region.toLowerCase()] ?? [];
+    return this.pokemonList().filter(
+      pokemon => pokemon.region === region
+    );
+  }
+
+  getAllPokemon(): Pokemon[] {
+    return this.pokemonList();
+  }
+
+  getHoennPokemon(): Pokemon[] {
+    return this.getPokemonByRegion('Hoenn');
   }
 }
