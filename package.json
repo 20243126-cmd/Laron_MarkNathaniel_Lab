@@ -17,12 +17,15 @@
     "@angular/forms": "^22.1.0",
     "@angular/platform-browser": "^22.1.0",
     "@angular/router": "^22.1.0",
+<<<<<<< HEAD
     "cors": "^2.8.6",
     "dotenv": "^18.0.6",
     "express": "^5.2.1",
     "mongodb": "^7.7.0",
     "mongoose": "^9.11.1",
     "nodemon": "^3.1.14",
+=======
+>>>>>>> 62430e25947e4b996b2eace06a3dd2d0b686b0b2
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
@@ -35,4 +38,8 @@
     "typescript": "~6.0.2",
     "vitest": "^4.0.8"
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 62430e25947e4b996b2eace06a3dd2d0b686b0b2
