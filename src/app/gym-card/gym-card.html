@@ -1,0 +1,15 @@
+<div class="gym-card">
+  <h2 [style.color]="leader.color">{{ leader.name }}</h2>
+
+  <p><strong>Gym Type:</strong> {{ leader.type }}</p>
+  <p><strong>Location:</strong> {{ leader.location }}</p>
+  <p><strong>Badge:</strong> {{ leader.badge }}</p>
+
+  <h3>Pokémon Team</h3>
+
+  <ul>
+    @for (pokemon of leader.pokemon; track pokemon) {
+      <li>{{ pokemon }}</li>
+    }
+  </ul>
+</div>

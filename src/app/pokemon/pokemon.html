@@ -1,0 +1,67 @@
+<div class="pokemon-container">
+
+  <h1>⚡ My Favorite Pokémon ⚡</h1>
+
+  <p class="subtitle">
+    Explore Pokémon from Kanto, Johto, and Hoenn!
+  </p>
+
+  <div class="region-buttons">
+
+    <button (click)="selectRegion('Kanto')">
+      🔴 Kanto
+    </button>
+
+    <button (click)="selectRegion('Johto')">
+      🟣 Johto
+    </button>
+
+    <button (click)="selectRegion('Hoenn')">
+      💙 Hoenn
+    </button>
+
+  </div>
+
+  <h2>{{ selectedRegion }} Pokémon</h2>
+
+  <div class="pokemon-grid">
+
+    @for (pokemon of pokemon; track pokemon.name) {
+
+      <div class="pokemon-card">
+
+        <div class="pokemon-icon">
+          ⭐
+        </div>
+
+        <h2>{{ pokemon.name }}</h2>
+
+        <p>
+          <strong>Type:</strong>
+          <span class="type">
+            {{ pokemon.type }}
+          </span>
+        </p>
+
+        <p>
+          <strong>Held Item:</strong>
+          <span class="item">
+            {{ pokemon.heldItem }}
+          </span>
+        </p>
+
+        <p class="description">
+          {{ pokemon.description }}
+        </p>
+
+      </div>
+
+    } @empty {
+
+      <p>No Pokémon found in this region.</p>
+
+    }
+
+  </div>
+
+</div>

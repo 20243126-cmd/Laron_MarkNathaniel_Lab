@@ -1,0 +1,114 @@
+.pokemon-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.pokemon-container h1 {
+  margin-bottom: 10px;
+}
+
+.region-buttons {
+  margin: 20px 0 30px;
+}
+
+.region-buttons button {
+  min-width: 120px;
+}
+
+/* Kanto */
+
+.region-buttons button:nth-child(1) {
+  background: #ef5350;
+  color: white;
+}
+
+/* Johto */
+
+.region-buttons button:nth-child(2) {
+  background: #9b59b6;
+  color: white;
+}
+
+/* Hoenn */
+
+.region-buttons button:nth-child(3) {
+  background: #3498db;
+  color: white;
+}
+
+.region-buttons button:hover {
+  filter: brightness(1.15);
+}
+
+/* Pokémon cards */
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.pokemon-card {
+  padding: 25px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff, #f0f8ff);
+  border: 4px solid #ffcb05;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  transition: 0.3s ease;
+}
+
+.pokemon-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+}
+
+.pokemon-card h2 {
+  color: #e3350d;
+  font-size: 25px;
+}
+
+.pokemon-card p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Type */
+
+.type {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 20px;
+  background: #3b4cca;
+  color: white;
+  font-weight: bold;
+}
+
+/* Held item */
+
+.held-item {
+  color: #d35400;
+  font-weight: bold;
+}
+
+/* Description */
+
+.description {
+  color: #555;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .pokemon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pokemon-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,29 @@
+<div class="menu">
+  <h1>Fruitshake & Dessert Menu</h1>
+
+  <h2>Fruitshakes</h2>
+
+  @for (shake of menuService.fruitshakes(); track shake.id) {
+    <div class="menu-item">
+      <strong>{{ shake.name }}</strong>
+      <span>₱{{ shake.price }}</span>
+
+      <button (click)="menuService.addToCart(shake)">
+        Add to Cart
+      </button>
+    </div>
+  }
+
+  <h2>Desserts</h2>
+
+  @for (dessert of menuService.desserts(); track dessert.id) {
+    <div class="menu-item">
+      <strong>{{ dessert.name }}</strong>
+      <span>₱{{ dessert.price }}</span>
+
+      <button (click)="menuService.addToCart(dessert)">
+        Add to Cart
+      </button>
+    </div>
+  }
+</div>

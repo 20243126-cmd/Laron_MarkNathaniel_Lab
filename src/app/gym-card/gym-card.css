@@ -1,0 +1,24 @@
+.gym-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gym-card h2 {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.gym-card h3 {
+  margin-bottom: 5px;
+}
+
+.gym-card ul {
+  padding-left: 25px;
+}
+
+.gym-card li {
+  margin: 5px 0;
+}

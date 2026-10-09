@@ -1,0 +1,52 @@
+<div class="shop">
+
+  <h1>PokéMart</h1>
+
+  <div class="shop-layout">
+
+    <section>
+      <h2>Items</h2>
+
+      <div class="items">
+        @for (item of pokemart.items; track item.id) {
+          <div class="item-card">
+            <h3>{{ item.name }}</h3>
+
+            <p>₱{{ item.price }}</p>
+
+            <button (click)="pokemart.addToCart(item)">
+              Add to Cart
+            </button>
+          </div>
+        }
+      </div>
+    </section>
+
+    <section class="cart">
+      <h2>Your Cart</h2>
+
+      @if (pokemart.cart().length === 0) {
+        <p>Your cart is empty.</p>
+      }
+
+      @for (item of pokemart.cart(); track $index) {
+        <div class="cart-item">
+          <span>{{ item.name }}</span>
+          <span>₱{{ item.price }}</span>
+
+          <button (click)="pokemart.removeFromCart($index)">
+            Remove
+          </button>
+        </div>
+      }
+
+      <h3>Total: ₱{{ pokemart.total() }}</h3>
+
+      <button (click)="pokemart.clearCart()">
+        Clear Cart
+      </button>
+    </section>
+
+  </div>
+
+</div>

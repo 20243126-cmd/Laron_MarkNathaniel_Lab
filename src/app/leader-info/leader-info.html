@@ -1,0 +1,16 @@
+<div class="leader-info">
+  <h2 [style.color]="gymBadge">{{ name }}</h2>
+
+  <p><strong>Age:</strong> {{ age }}</p>
+  <p><strong>Location:</strong> {{ location }}</p>
+  <p><strong>Pokemon Team:</strong> {{ pokemonTeam }}</p>
+  <p><strong>Gym Badge:</strong> {{ gymBadge }}</p>
+
+  <button (click)="toggleDescription()">
+    Monologue / Description / Motto
+  </button>
+
+  @if (showDescription) {
+    <p class="description">{{ description }}</p>
+  }
+</div>
